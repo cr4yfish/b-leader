@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
+          <Link href="/User"><button>Go to user page</button></Link>
         </p>
         <div>
           <a

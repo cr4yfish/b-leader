@@ -1,0 +1,203 @@
+
+
+declare module "bleader" {
+    interface IUser {
+        mapperId: number;
+        banned: boolean;
+        inactive: boolean;
+        banDescription: string;
+        externalProfileUrl: string;
+        history: null;
+        badges: Array<any>;
+        pinnedScores: any;
+        changes: Array<any>;
+        accPp: number;
+        passPp: number;
+        techPp: number;
+        scoreStats: {
+            id: number;
+            totalScore: number;
+            totalUnrankedScore: number;
+            lastScoreTime: number;
+            lastUnrankedScoreTime: number;
+            averageRankedAccuracy: number;
+            averageWeightedRankedAccuracy: number;
+            averageUnrankedAccuracy: number;
+            averageAccuracy: number;
+            medianRankedAccuracy: number;
+            medianAccuracy: number;
+            topRankedAccuracy: number;
+            topUnrankedAccuracy: number;
+            topAccuracy: number;
+            topPp: number;
+            topBonusPp: number;
+            topPassPp: number;
+            topAccPp: number;
+            topTechPp: number;
+            peakRank: number;
+            rankedMaxStreak: number;
+            unrankedMaxStreak: number;
+            maxStreak: number;
+            averageLeftTimeing: number;
+            averageRightTimeing: number;
+            rankedPlayCount: number;
+            unrankedPlayCount: number;
+            totalPlayCount: number;
+            averageRankedRank: number;
+            averageWeightedRankedRank: number;
+            averageUnrankedRank: number;
+            averageRank: number;
+            sspPlays: number;
+            ssPlays: number;
+            sPlays: number;
+            aPlays: number;
+            topPlatform: string;
+            topHMD: number;
+            dailyImprovements: number;
+            authorizedReplayWatched: number;
+            anonimusReplayWatched: number;
+            watchedReplays: number;
+        };
+        lastWeekPp: number;
+        lastWeekRank: number;
+        lastWeekCountryRank: number;
+        eventsParticipating: Array<any>;
+        id: string;
+        name: string;
+        platform: string;
+        avatar: string;
+        country: string;
+        bot: boolean;
+        pp: number;
+        rank: number;
+        countryRank: number;
+        role: string;
+        socials: Array<any>;
+        patreonFeatures: any;
+        profileSettings: {
+            id: string;
+            bio: any;
+            message: any;
+            effectName: string;
+            profileAppearance: string;
+            hue: any;
+            saturation: any;
+            leftSaberColor: any;
+            rightSaberColor: any;
+            profileCover: any;
+            starredFriends: any;
+            showBots: boolean;
+        };
+        clans: Array<any>;
+    };
+
+    interface IScores {
+        data: Array<IScore>;
+        metadata: {
+            itemsPerPage: number;
+            page: number;
+            total: number;
+        };
+    };
+
+    interface IScore {
+        accLeft: number;
+        accRight: number;
+        accPP: number;
+        accuracy: number;
+        badCuts: number;
+        baseScore: number;
+        bombCuts: number;
+        bonusPp: number;
+        controller: number;
+        country: string;
+        fcAcuracy: number;
+        fcPp: number;
+        fullCombo: boolean;
+        hmd: number;
+        id: number;
+        leaderboard: {
+            changes: any;
+            difficulty: {
+                accRating: number;
+                bombs: number;
+                difficultyName: string;
+                duration: number;
+                id: number;
+                maxScore: number;
+                mode: number;
+                modeName: string;
+                modifierValues: {};
+                modifiersRating: {};
+                njs: number;
+                nominatedTime: number;
+                notes: number;
+                nps: number;
+                passRating: number;
+                predictedAcc: number;
+                qualifiedTime: number;
+                rankedTime: number;
+                requirements: number;
+                stars: number;
+                status: number;
+                techRating: number;
+                type: number;
+                value: number;
+                walls: number;
+            };
+            id: string;
+            leaderboardGroup: any;
+            plays: number;
+            qualification: any;
+            reweight: any;
+            scores: any;
+            song: {
+                author: string;
+                bpm: number;
+                coverImage: string;
+                difficulties: Array<any>;
+                downloadUrl: string;
+                duration: number;
+                fullCoverImage: string;
+                hash: string;
+                id: string;
+                mapper: string;
+                mapperId: number;
+                name: string;
+                subName: string;
+                tags: string;
+                uploadTime: number;
+            }
+        };
+        leaderboardId: string;
+        maxCombo: number;
+        maxStreak: number;
+        metadata: any;
+        missedNotes: number;
+        modifiedScore: number;
+        modifiers: string;
+        myScore: any;
+        offsets: {};
+        passPP: number;
+        pauses: number;
+        platform: string;
+        playCount: number;
+        player: IUser;
+        playerId: string;
+        pp: number;
+        rank: number;
+        rankVoting: any;
+        replay: string;
+        replaysWatched: number;
+        scoreImprovement: {};
+        techPP: number;
+        timepost: number;
+        timeset: string;
+        wallsHit: number;
+        weight: number;
+    };
+
+    interface IFullUser extends IUser {
+        scores: IScores;
+    }
+}

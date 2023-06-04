@@ -1,0 +1,32 @@
+.userInfoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.userInfoScoreStats {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.userInfoScoreStats > span:first-of-type {
+    font-size: .75rem;
+    font-weight: 300;
+    color: #8283A3;
+}
+
+.userSongList {
+    display: flex;
+    flex-direction: column;
+}
+
+.songListEntry {
+    background-color: transparent;
+    border-radius: var(--borderRadius) !important;
+}
+
+.songListEntry td {
+
+}
