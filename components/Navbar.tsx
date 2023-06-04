@@ -10,7 +10,7 @@ export default function Navbar() {
             }}
         >
             <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "2rem"}}>
-                <h1>BLeader</h1>
+                <Link href="/" style={{ textDecoration: "none" }}><h1>BLeader</h1></Link>
                 <div style={{ display: "flex", flexDirection: "row", gap: "1rem", alignItems: "center", textDecoration: "none" }}>
                     <Link href="/Maps" style={{ textDecoration: "none" }} >Maps</Link>
                     <Link href="/Rankings" style={{ textDecoration: "none" }}>Rankings</Link>
