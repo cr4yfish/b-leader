@@ -1,9 +1,8 @@
 
 import { IUser, IScores, IFullUser } from "bleader";
 
+const proxy = "https://api.allorigins.win/get?url=";
 const baseUrl = "https://api.beatleader.xyz";
-
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function GetFullPlayerData(id: string) {
     
@@ -18,15 +17,17 @@ export async function GetFullPlayerData(id: string) {
 
 export async function GetPlayerData(id: string) {
 
-    const res = await fetch(`${baseUrl}/player/${id}`);
-    const data = await res.json();
+    let res = await fetch(`${proxy}${encodeURIComponent(baseUrl)}/player/${id}`);
+    const json = await res.json();
+    const data = JSON.parse(json.contents);
 
     return data as IUser;
 }
 
 export async function GetPlayerScores(id: string, sort="date") {
-    const res = await fetch(`${baseUrl}/player/${id}/scores?sortBy=${sort} `);
-    const data = await res.json();
+    const res = await fetch(`${proxy}${encodeURIComponent(baseUrl)}/player/${id}/scores?sortBy=${sort} `);
+    const json = await res.json();
+    const data = JSON.parse(json.contents);
 
     return data as IScores;
 }
